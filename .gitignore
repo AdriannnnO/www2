@@ -2,3 +2,4 @@
 *.pyc
 jd/
 *.sqlite3
+www1lekcja/blog/blog/migrations/__init__.py
