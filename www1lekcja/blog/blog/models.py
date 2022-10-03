@@ -7,14 +7,17 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+class Answer(models.Model):   
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    answer = models.TextField(max_length=200)
+    def __str__(self):
+        return self.answer
+
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+    answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
     def __str__(self):
         return self.choice_text
-
-class Answer(models.Model):   
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    answer = models.TextField(max_length=200)
 

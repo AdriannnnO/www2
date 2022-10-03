@@ -3,3 +3,8 @@
 jd/
 *.sqlite3
 www1lekcja/blog/blog/migrations/__init__.py
+www1lekcja/blog/blog/migrations/0004_remove_question_name_alter_choice_question.py
+www1lekcja/blog/blog/migrations/0003_question_name.py
+www1lekcja/blog/blog/migrations/0004_remove_question_name_alter_choice_question.py
+www1lekcja/blog/blog/migrations/0003_question_name.py
+www1lekcja/blog/blog/migrations/0003_question_name.py
