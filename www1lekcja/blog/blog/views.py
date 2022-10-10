@@ -1,9 +1,8 @@
 from .models import Question
 from django.shortcuts import render, get_object_or_404
 
-def jd(request):
-   return render(request, 'jd.html')
-
+def home_view(request):
+   return render(request, 'jd.html', {})
 
 def question_list(request):
    questions = Question.objects.all()

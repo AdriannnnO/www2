@@ -1,4 +1,9 @@
 <div><h1>siema eniu</h1></div>
+{% if request.user.is_authenticated %}
+    <p>no siema {{ request.user.get_username }}</p>
+{% else %}
+    <p>no nie zalogowales sie</p>
+{% endif %}
 
 
 
@@ -8,5 +13,7 @@
         color: red;
         text-align: center;
     }
-
+    p{
+        text-align: center;
+    }
 </style>
