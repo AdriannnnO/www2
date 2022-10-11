@@ -13,3 +13,8 @@ def question_detail(request, question_id):
    question = get_object_or_404(Question, pk=question_id)
    print(question.id)
    return render(request, 'question_detail.html', {'question': question})
+
+def policjant(request):
+   return render(request, 'zasilek.html', {})
+ 
+ 
