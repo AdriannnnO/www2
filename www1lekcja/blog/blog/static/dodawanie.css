@@ -1,0 +1,11 @@
+html{
+    background-color: aqua;
+}
+
+h2,h1,h3{
+    text-align: center;
+    color: red;
+}
+form{
+    text-align: center;
+}
