@@ -1,6 +1,6 @@
 from .models import Question
 from django.shortcuts import render, get_object_or_404
-from .forms import QuestionForm
+from .forms import QuestionForm, ChoiceForm
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
@@ -29,5 +29,16 @@ def question_add(request):
    else:
       form = QuestionForm()
       return render(request, 'questionform.html', {'form': form})
+
+def choice_add(request):
+    if request.method == "POST":
+        form = ChoiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('question_list'))
+    else:
+        form = ChoiceForm()
+    return render(request, 'choice_form.html', {"form": form})
+    # return HttpResponseRedirect(reverse('choice-add'))    
 
 

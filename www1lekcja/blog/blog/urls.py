@@ -10,6 +10,7 @@ urlpatterns = [
    path('', views.home_view),
    path('<int:question_id>/', views.question_detail, name='question_detail'),
    path('policjant/', views.policjant),
-   path('newquestion/', views.question_add, name="question_add")
+   path('newquestion/', views.question_add, name="question_add"),
+   path('newchoice/', views.choice_add, name='choice_add')
 
 ]
