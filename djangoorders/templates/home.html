@@ -19,5 +19,14 @@
     <li><a href="{% url 'customer_table' %}">Customers</a></li>
     <li>Items</li>
     <li>Orders</li>
+{% if user.is_authenticated %}
+<li><a href="{% url 'item_create' %}">create item</a></li>
+{% if user.role is 3 and user.is_authenticated %}
+
+{% else %}
+  <li><a href="{% url 'sellers' %}">sellers</a></li>
+{% endif %}
+{%endif%}
+
   </ul>
 {% endblock main %}

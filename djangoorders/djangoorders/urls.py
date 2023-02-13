@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-
+from items import views
 from customers import views as customer_views
 from django.contrib.auth import views as auth_views
 
@@ -17,6 +17,8 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
     path('', customer_views.home, name="home"),
+    path('customers/sellers/', customer_views.sellers, name='sellers'),
+    path('item-create/', views.item_create, name='item_create')
 ]
 
 # 2.

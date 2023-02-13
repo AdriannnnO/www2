@@ -1,0 +1,42 @@
+{% extends 'base_bulma.html' %}
+
+
+{% block title %}seller List{% endblock title %}
+{% block h1 %}sellers{% endblock h1 %}
+
+{% block main %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="4"></th>
+        <th colspan="5">Address</th>
+      </tr>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>ZIP Code</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for seller in sellers %}
+        <tr>
+          <td>{{ seller.pk }}</td>
+          <td>{{ seller.first_name }}</td>
+          <td>{{ seller.last_name }}</td>
+          <td>{{ seller.username }}</td>
+          <td>{{ seller.street }}</td>
+          <td>{{ seller.city }}</td>
+          <td>{{ seller.state }}</td>
+          <td>{{ seller.zip_code }}</td>
+          <td>{{ seller.country }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock main %}

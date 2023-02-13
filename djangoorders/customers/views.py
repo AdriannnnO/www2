@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse_lazy
+from django.core.exceptions import PermissionDenied
 
 from customers.models import User
 
@@ -13,7 +14,7 @@ def customer_list(request):
 
 
 def customer_table(request):
-    customers = User.objects.all()
+    customers = User.objects.filter(role=3)
     context = {
         'customers': customers,
     }
@@ -22,6 +23,16 @@ def customer_table(request):
 
 def home(request):
     return render(request, 'home.html')
+
+def sellers(request):
+    sellers = User.objects.filter(role=2)
+    context = {
+        'sellers': sellers
+    }
+    print(sellers)
+    if request.user.is_anonymous or request.user.role is User.CUSTOMER:
+          raise PermissionDenied
+    return render(request, 'customers/sellers.html', context=context)
 
 
 def customer_create(request):
